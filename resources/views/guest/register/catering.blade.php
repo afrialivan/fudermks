@@ -12,7 +12,7 @@
 
 <body class="bg">
 
-  <div class="d-block m-auto">
+  <div class="d-block m-auto mb-5">
     <div class="logo">
       <img class="d-block m-auto" src="{{ asset('') }}" style="width: 150px;" alt="">
     </div>
