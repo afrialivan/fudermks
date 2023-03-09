@@ -120,14 +120,14 @@
               <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
           </div>
-          <div class="col-4">
-            <div class="mb-3">
+          <div class="col-12 col-lg-6 col-sm-6 col-md-6">
+            <div class="mb-4">
               <label for="exampleInputPassword1" class="form-label">Konfirmasi Kata Sandi</label>
               <input type="password" class="form-control" id="exampleInputPassword1">
             </div>
           </div>
-          <div class="col-2">
-            <div class="mb-3">
+          <div class="col-12">
+            <div class="mb-3 d-grid">
               <button class="btn btn-primary">Register</button>
             </div>
           </div>
