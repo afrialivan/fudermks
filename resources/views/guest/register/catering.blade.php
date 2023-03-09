@@ -12,9 +12,9 @@
 
 <body class="bg">
 
-  <div class="d-block m-auto mb-5 pt-3">
+  <div class="d-block m-auto mb-5">
     <div class="logo">
-      <img class="d-block m-auto" src="{{ asset('img/logoo.svg') }}" style="width: 200px;" alt="">
+      <img class="d-block m-auto" src="{{ asset('') }}" style="width: 150px;" alt="">
     </div>
     <div class="kotak bg-light d-block m-auto rounded-3 p-4 mt-3">
       <p class="h2">Daftar Catering !</p>
@@ -135,6 +135,7 @@
       </form>
     </div>
   </div>
+>>>>>>> 095437ca5a57178c139eff59956432374b30aa35
 
 
 
