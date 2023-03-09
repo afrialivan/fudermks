@@ -14,16 +14,20 @@ body {
   color: var(--primary);
 }
 
-.tengah {
+/* .tengah {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 .kotak {
-  width: 900px;
+  max-width: 900px;
 }
 
 .form-control {
   border: 1px solid var(--primary);
+}
+
+@media screen and (max-width: 576px) {
+  
 }
