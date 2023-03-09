@@ -113,7 +113,7 @@
             </div>
           </div>
         </div>
-        <div class="row align-items-end">
+        <div class="row">
           <div class="col-12 col-lg-6 col-sm-6 col-md-6">
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Kata Sandi</label>
