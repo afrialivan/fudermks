@@ -1,0 +1,29 @@
+:root {
+  --primary: #6D8B74 !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.bg {
+  background-color: var(--primary)                                    ;
+}
+
+.text {
+  color: var(--primary);
+}
+
+.tengah {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.kotak {
+  width: 900px;
+}
+
+.form-control {
+  border: 1px solid var(--primary);
+}
