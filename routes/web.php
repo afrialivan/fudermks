@@ -22,7 +22,7 @@ Route::get('/login', [userController::class, 'index']);
 Route::post('/login', [userController::class, 'login']);
 Route::get('/logout', [userController::class, 'logout']);
 
-Route::get('/catering', [cateringController::class, 'semuaCatering']);
+// Route::get('/catering', [cateringController::class, 'semuaCatering']);
 Route::get('/catering/{catering:slug}', [cateringController::class, 'show']);
 Route::get('/catering/{catering:slug}/{menu:slug}', [cateringController::class, 'menuDetail']);
 Route::post('/tambah-keranjang/{menu}', [cateringController::class, 'tambahKeranjang']);
