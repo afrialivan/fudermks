@@ -31,6 +31,7 @@
   
   /* mobile */
   body {
+    background-color: white !important;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif; 
   }
@@ -45,7 +46,7 @@
     margin-bottom: 20px;
   }
 
-  .container {
+  .containerr {
     padding: 40px;
     box-sizing: border-box;
     border-radius: 20px;
@@ -54,7 +55,7 @@
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
   }
 
-  .container h2 {
+  .containerr h2 {
     font-size: calc(2.4rem + ((1vw - 7.68px) * 0.6944));
     margin-bottom: 20px;
   }
@@ -121,7 +122,7 @@
   
   /* tablet */
   @media screen and (min-width: 620px) {
-    .container {
+    .containerr {
       width: 500px;
       position: relative;
       background-color: white;

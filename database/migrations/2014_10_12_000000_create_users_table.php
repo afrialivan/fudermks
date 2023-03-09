@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('nik', 16)->nullable();
             $table->enum('role', ['user', 'catering', 'admin'])->default('user');
             $table->text('foto')->nullable();
+            $table->enum('status', ['belum', 'verifikasi']);
             $table->timestamps();
         });
     }
