@@ -14,13 +14,13 @@
 
     <div class="d-block m-auto mb-5">
         <div class="logo">
-            <img class="d-block m-auto" src="{{ asset('') }}" style="width: 150px;" alt="">
+            <img class="d-block mt-4 mb-4 m-auto img-fluid" src="{{ asset('img/logo-putih.svg') }}" style="width: 200px;" alt="">
         </div>
         <div class="kotak bg-light d-block m-auto rounded-3 p-4 mt-3">
-            <p class="h2">Daftar Catering !</p>
-            <p class="h6">Data Pemilik</p>
+            <p class="h2 text-center">Pendaftaran Catering</p>
+            <p class="h6 mt-4">Data Pemilik</p>
             <form action="/registercatering" method="POST">
-              @csrf
+                @csrf
                 <div class="row">
                     <div class="col-12 col-lg-6 col-sm-6 col-md-6">
                         <div class="mb-3">
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-                <p class="h6">Data Pemilik</p>
+                <p class="h6 mt-4">Data Catering</p>
                 <div class="row">
                     <div class="col-12 col-lg-6 col-sm-6 col-md-6">
                         <div class="mb-3">
@@ -106,15 +106,16 @@
                         </div>
                     </div>
                 </div>
+                <p class="h6 mt-4">Data Akun</p>
                 <div class="row">
-                    <div class="col-12 col-lg-6 col-sm-6 col-md-6">
+                    <div class="col-12">
                         <div class="mb-3">
                             <label for="input" class="form-label">Username</label>
                             <input type="text" class="form-control" id="input" name="username">
                         </div>
                     </div>
                 </div>
-                <div class="row align-items-end">
+                <div class="row">
                     <div class="col-12 col-lg-6 col-sm-6 col-md-6">
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Kata Sandi</label>
