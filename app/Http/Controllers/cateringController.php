@@ -107,7 +107,8 @@ class cateringController extends Controller
         return view('user.catering.index', [
             'title' => $catering->nama,
             'menus' => Menu::all(),
-            'catering' => $catering
+            'catering' => $catering,
+            'menu' => Menu::all()
         ]);
     }
 

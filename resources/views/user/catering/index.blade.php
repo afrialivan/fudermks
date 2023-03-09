@@ -41,31 +41,31 @@
             <div class="nav-menu-item active">
                 <a href="../" class="text-decoration-none">
                     <h4>PRASMANAN</h4>
-                    <p>4 product</p>
+                    <p>{{ $menu->where('jenis', 'prasmanan')->count() }} product</p>
                 </a>
             </div>
             <div class="nav-menu-item ">
                 <a href="../" class="text-decoration-none">
                     <h4>NASI KOTAK</h4>
-                    <p>4 product</p>
+                    <p>{{ $menu->where('jenis', 'nasi kotak')->count() }} product</p>
                 </a>
             </div>
             <div class="nav-menu-item ">
                 <a href="../" class="text-decoration-none">
                     <h4>SNACK/JAJANAN</h4>
-                    <p>4 product</p>
+                    <p>{{ $menu->where('jenis', 'snack/jajanan')->count() }} product</p>
                 </a>
             </div>
             <div class="nav-menu-item ">
                 <a href="../" class="text-decoration-none">
                     <h4>MENU LAIN</h4>
-                    <p>4 product</p>
+                    <p>{{ $menu->where('jenis', 'menu lain')->count() }} product</p>
                 </a>
             </div>
             <div class="nav-menu-item ">
                 <a href="../" class="text-decoration-none">
                     <h4>MINUMAN</h4>
-                    <p>4 product</p>
+                    <p>{{ $menu->where('jenis', 'minuman')->count() }} product</p>
                 </a>
             </div>
         </div>
