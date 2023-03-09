@@ -31,5 +31,5 @@ Route::get('/menu', [cateringController::class, 'menu']);
 Route::get('/pesanan', [cateringController::class, 'pesanan']);
 
 Route::get('/dashboard/index', [DashboardController::class, 'index']);
-Route::get('/dashboard/catering/home', [UserCateringController::class, 'index']);
-Route::get('/dashboard/catering/menu', [UserCateringController::class, 'menu']);
+// Route::get('/dashboard/catering/home', [UserCateringController::class, 'index']);
+// Route::get('/dashboard/catering/menu', [UserCateringController::class, 'menu']);
