@@ -30,11 +30,11 @@ class userController extends Controller
         return back();
     }
 
-    public function register() {
-        return view('user.register.index');
+    public function registerpelanggan() {
+        return view('guest.register.pelanggan');
     }
-    public function registerCatering() {
-        return view('catering.register.index');
+    public function registercatering() {
+        return view('guest.register.catering');
     }
 
     public function logout(Request $request) {

@@ -25,8 +25,8 @@
     </div>
     
     <div class="link-pendaftaran grid">
-        <a href="daftarPelanggan.html" class="link">Daftar sebagai Pelanggan</a>
-        <a href="daftarCatering.html" class="link">Daftar sebagai Catering</a>
+        <a href="/registerpelanggan" class="link">Daftar sebagai Pelanggan</a>
+        <a href="/registercatering" class="link">Daftar sebagai Catering</a>
     </div>
 </body>
 </html>

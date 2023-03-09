@@ -22,8 +22,8 @@ Route::get('/login', [userController::class, 'index']);
 Route::post('/login', [userController::class, 'login']);
 Route::get('/logout', [userController::class, 'logout']);
 
-Route::get('/registerpelanggan', [userController::class, 'index']);
-Route::get('/registercatering', [userController::class, 'index']);
+Route::get('/registerpelanggan', [userController::class, 'registerpelanggan']);
+Route::get('/registercatering', [userController::class, 'registercatering']);
 
 Route::get('/catering', [cateringController::class, 'semuaCatering']);
 Route::get('/catering/{catering:slug}', [cateringController::class, 'show']);
