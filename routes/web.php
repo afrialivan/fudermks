@@ -23,6 +23,7 @@ Route::post('/login', [userController::class, 'login']);
 Route::get('/logout', [userController::class, 'logout']);
 
 Route::get('/registerpelanggan', [userController::class, 'registerpelanggan']);
+Route::post('/registerpelanggan', [userController::class, 'registerpelanggan']);
 Route::get('/registercatering', [userController::class, 'registercatering']);
 
 Route::get('/catering', [cateringController::class, 'semuaCatering']);
