@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class userController extends Controller
 {
     public function index() {
-        return view('login.index');
+        return view('guest.login.index');
     }
 
     public function login(Request $request) {
