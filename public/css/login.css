@@ -1,0 +1,175 @@
+:root {
+    --primary: #6D8B74;
+  }
+  
+  
+  /* reset */
+  ul {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: var(--primary);
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  /* fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+  
+  
+  
+  /* grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  
+  
+  /* mobile */
+  body {
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif; 
+  }
+  main {
+    grid-column: span 12;
+  }
+  .logo {
+    padding-top: 20px;
+    display: block;
+    margin: auto;
+    width: calc(7rem + ((1vw - 7.68px) * 0.6944));
+    margin-bottom: 20px;
+  }
+
+  .container {
+    padding: 40px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    margin: auto;
+    width: 90vw;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+  }
+
+  .container h2 {
+    font-size: calc(2.4rem + ((1vw - 7.68px) * 0.6944));
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form label {
+    color: #585858;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+
+  form input {
+    border-radius: 20px;
+    height: 60px;
+    border: 2px solid #585858;
+    padding-left: 20px;
+  }
+
+  form input:nth-child(2) {
+    margin-bottom: 20px;
+  }
+
+  button {
+    margin-top: 50px;
+    border-radius: 20px;
+    height: 60px;
+    /* color: #6D8B74; */
+    background-color: #6D8B74;
+    color: white;
+    font-weight: 600;
+    border: 2px solid var(--primary);
+    font-size: calc(1.2rem + ((1vw - 7.68px) * 0.6944));
+  }
+
+  .link-pendaftaran {
+    justify-items: center;
+  }
+  
+  .link {
+    display: inline-block;
+    grid-column: span 12;
+    text-align: center;
+    width: 70vw;
+    border-radius: 20px;
+    padding: 20px 40px;
+    border: 3px solid var(--primary);
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .link:nth-child(1) {
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+  .bg1, .bg2{
+    display: none;
+  }
+  
+  /* tablet */
+  @media screen and (min-width: 620px) {
+    .container {
+      width: 500px;
+      position: relative;
+      background-color: white;
+    }
+    .link-pendaftaran {
+      /* width: 50%; */
+      margin-top: 40px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .link {
+      width: 200px;
+    }
+    .link:nth-child(1) {
+      grid-column: 5/7;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .link:nth-child(2) {
+      grid-column: 8/9;
+    }
+    .bg1 {
+      display: block;
+      position: absolute;
+      top: -5px;
+      left: calc(-200px - ((1vw - 7.68px) * 0.6944));
+      width: calc(14.6rem + ((1vw - 7.68px) * 0.6944));
+      z-index: -99;
+    }
+    .bg2 {
+      display: block;
+      position: absolute;
+      top: -5px;
+      right: calc(-200px - ((1vw - 7.68px) * 0.6944));
+      width: calc(14.6rem + ((1vw - 7.68px) * 0.6944));
+      z-index: -99;
+    }
+  }
+  
+  /* laptop */
+  @media screen and (min-width: 960px) {
+    .bg1 {
+      left: calc(-230px - ((1vw - 7.68px) * 0.6944));
+    }
+    .bg2 {
+      right: calc(-230px - ((1vw - 7.68px) * 0.6944));
+    }
+  }
+  
+  /* desktop */
+  @media screen and (min-width: 1200px) {
+
+  }

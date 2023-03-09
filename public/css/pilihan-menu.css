@@ -1,0 +1,132 @@
+main h2 {
+  text-align: center;
+  /* margin-top: 20px; */
+  padding: 15px 0;
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+main nav ol li a {
+  color: #999999;
+}
+
+.contact p {
+  font-size: calc(1.3rem + ((1vw - 7.68px) * 0.6944));
+}
+
+.nav-menu {
+  width: 80%;
+}
+
+.nav-menu-item a h4 {
+  margin-top: 10px;
+  margin-bottom: -2px;
+  font-size: calc(1rem + ((1vw - 7.68px) * 0.6944));
+  color: black;
+}
+
+.nav-menu-item a p {
+  color: #6D8B74;
+  font-size: calc(.7rem + ((1vw - 7.68px) * 0.6944));
+}
+
+.nav-menu .active {
+  padding: 0px 20px;
+  /* width: 200px;
+  height: 70px; */
+  border-radius: 20px;
+  border: 2px solid #6D8B74;
+}
+
+.gambar {
+  display: block;
+  margin: auto;
+  object-fit: cover;
+  width: 90%;
+  height: calc(20rem + ((1vw - 7.68px) * 0.6944));
+  border-radius: 20px;
+}
+
+.tombol-jumlah {
+  border: 1px solid #BDBDBD;
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+}
+.tombol-jumlah input {
+  line-height: 40px;
+  border: none;
+  border-left: 1px solid #BDBDBD;
+  border-right: 1px solid #BDBDBD;
+  height: 100%;
+  padding: 0 15px;
+  width: 50px;
+  text-align: center;
+}
+.tombol .btn {
+  text-align: center;
+  width: 400px;
+  height: 60px;
+  background-color: #6D8B74;
+  border-radius: 10px;
+  width: 100%;
+  font-size: calc(1rem + ((1vw - 7.68px) * 0.6944));
+}
+
+.tombol:nth-child(2) .btn {
+  line-height: 45px;
+}
+
+.fw {
+  font-weight: 500;
+}
+
+.notiff {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+.notif {
+  background-color: white;
+  width: 40%;
+  padding: 20px 0;
+  border-radius: 20px;
+  /* height: 40px; */
+}
+.notif .btn {
+  background-color: #D9D9D9;
+  width: 100px;
+  border-radius: 20px;
+}
+
+h3 {
+  font-weight: 600 !important;
+}
+
+/* tablet */
+@media screen and (min-width: 620px) {
+  .foot-links {
+    width: 50%;
+  }
+}
+
+/* laptop */
+@media screen and (min-width: 960px) {
+  .gambar {
+    width: 80%;
+    height: 300px;
+  }
+  .tombol .btn {
+    font-size: calc(.6rem + ((1vw - 7.68px) * 0.6944));
+  }
+
+}
+
+/* desktop */
+@media screen and (min-width: 1200px) {
+}

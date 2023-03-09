@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #6D8B74;
+}
+
+
+/* reset */
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+
+
+/* grid */
+.gridd {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+
+/* mobile */
+body {
+  position: relative;
+  padding-right: 20px;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 p {
+  font-family: 'Poppins', sans-serif;
+}
+
+header {
+  display: none;
+}
+
+main {
+  grid-column: span 12;
+  padding-left: 20px;
+}
+
+main h2 {
+  text-align: center;
+  /* margin-top: 20px; */
+  padding: 15px 0;
+  background-color: var(--primary);
+  color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+main nav ol li a {
+  color: #999999;
+}
+
+
+.card {
+  background-color: #6D8B74 !important;
+  color: white;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background-color: var(--primary);
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.foot-links {
+  display: flex;
+  justify-content: space-between;
+  width: calc(70% + ((1vw - 7.68px) * 0.6944));
+  margin: auto;
+}
+
+.foot-links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foot-links a h3 {
+  color: white;
+  font-size: calc(1rem + ((1vw - 7.68px) * 0.6944));
+  margin-top: 5px;
+}
+
+.foot-links a img {
+  width: calc(2rem + ((1vw - 7.68px) * 0.6944));
+}
+
+/* tablet */
+@media screen and (min-width: 620px) {
+  .foot-links {
+    width: 50%;
+  }
+}
+
+/* laptop */
+@media screen and (min-width: 960px) {
+
+  footer {
+    display: none;
+  }
+
+  header {
+    display: block;
+    grid-column: 1/4;
+    height: 100vh;
+    background-color: var(--primary);
+    position: sticky;
+    top: 0;
+  }
+
+  main {
+    padding-left: 30px;
+    grid-column: 4/13;
+  }
+
+  main h2 {
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--primary);
+  }
+
+  .nav-a a {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-a a h3 {
+    color: white;
+  }
+
+  .nav-foto {
+    margin: auto;
+    display: block;
+    width: calc(16rem + ((1vw - 7.68px) * 0.6944));
+    margin: 50px auto;
+    transition: 0.3s;
+  }
+
+  .nav-foto:hover {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    transition: 0.3s;
+    content: '';
+  }
+
+  .nav-foto .foto {
+    background-color: black;
+    border-radius: 100%;
+    width: calc(10rem + ((1vw - 7.68px) * 0.6944));
+    height: calc(10rem + ((1vw - 7.68px) * 0.6944));
+    margin: auto;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .foto img {
+    margin: auto;
+    width: 55%;
+  }
+
+  .nav-foto h3 {
+    text-align: center;
+    font-size: calc(1.5rem + ((1vw - 7.68px) * 0.6944));
+    color: white;
+    /* width: 300px; */
+    margin: auto;
+  }
+
+  .nav-a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+  }
+
+  .nav-a a {
+    margin-left: calc(2rem + ((1vw - 7.68px) * 0.6944));
+  }
+
+  .nav-a a img {
+    width: calc(2.5rem + ((1vw - 7.68px) * 0.6944));
+    margin-right: 10px;
+  }
+  .nav-a a:nth-child(4) img{
+    width: calc(1.8rem + ((1vw - 7.68px) * 0.6944));
+  }
+
+  .nav-a a h3 {
+    font-size: calc(1.4rem + ((1vw - 7.68px) * 0.6944));
+  }
+
+
+}
+
+/* desktop */
+@media screen and (min-width: 1200px) {
+  header {
+    grid-column: 1/4;
+    height: 100vh;
+    background-color: var(--primary);
+  }
+
+  main {
+    padding-left: 30px;
+    grid-column: 4/13;
+  }
+
+  main h2 {
+    font-size: 2rem;
+    margin-top: 10px;
+  }
+
+  .nav-a a {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-a a h3 {
+    color: white;
+  }
+
+  .nav-foto {
+    margin: auto;
+    display: block;
+    margin: 50px auto;
+    transition: 0.3s;
+  }
+
+  .nav-foto:hover {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    transition: 0.3s;
+    content: '';
+  }
+
+  .nav-foto .foto {
+    background-color: black;
+    border-radius: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .foto img {
+    margin: auto;
+    width: 55%;
+  }
+
+  .nav-a a {
+    margin-left: 40px;
+  }
+}
