@@ -16,9 +16,9 @@
 
 <body class="gridd">
 
-    @include('partials.sidenav')
+    @include('layouts.partials.sidenav')
     @yield('container')
-    @include('partials.footer')
+    @include('layouts.partials.footer')
     
 
     @yield('js')
