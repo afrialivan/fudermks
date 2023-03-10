@@ -26,13 +26,9 @@ class userController extends Controller
             if (auth()->user()->role === 'admin') {
                 return redirect('/dashboard');
             }
-<<<<<<< HEAD
             if(auth()->user()->role === 'catering') {
                 $katering = Catering::where('id_user', auth()->user()->id)->get();
                 $request->session()->put('datacatering', $katering[0]);
-=======
-            if (auth()->user()->role === 'catering') {
->>>>>>> 56952edd92e2479d38e8a43acf1a4d701cb4c817
                 return redirect('/dashboard');
             }
             return redirect('/catering');
