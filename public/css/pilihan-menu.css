@@ -1,3 +1,7 @@
+main {
+  margin-right: 10px;
+}
+
 main h2 {
   text-align: center;
   /* margin-top: 20px; */
@@ -50,8 +54,8 @@ main nav ol li a {
 
 .tombol-jumlah {
   border: 1px solid #BDBDBD;
-  width: 100px;
-  height: 40px;
+  width: 200px;
+  height: 50px;
   border-radius: 20px;
 }
 .tombol-jumlah input {
@@ -61,14 +65,23 @@ main nav ol li a {
   border-right: 1px solid #BDBDBD;
   height: 100%;
   padding: 0 15px;
-  width: 50px;
+  width: 130px;
   text-align: center;
 }
-.tombol .btn {
+/* .tombol .btn {
   text-align: center;
   width: 400px;
   height: 60px;
   background-color: #6D8B74;
+  border-radius: 10px;
+  width: 100%;
+  font-size: calc(1rem + ((1vw - 7.68px) * 0.6944));
+} */
+.btnn {
+  text-align: center;
+  width: 400px;
+  height: 60px;
+  background-color: #6D8B74 !important;
   border-radius: 10px;
   width: 100%;
   font-size: calc(1rem + ((1vw - 7.68px) * 0.6944));
