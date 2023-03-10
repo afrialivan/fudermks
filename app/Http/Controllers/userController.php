@@ -24,6 +24,8 @@ class userController extends Controller
         if (Auth::attempt($validasi)) {
             $request->session()->regenerate();
             if (auth()->user()->role === 'admin') {
+                $admin = User::where('id', auth()->user()->id)->get();
+                $request->session()->put('user', $admin[0]->name);
                 return redirect('/dashboard');
             }
             if(auth()->user()->role === 'catering') {

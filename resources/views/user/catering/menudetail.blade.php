@@ -23,13 +23,13 @@
                 <h1 class="mt-3">{{ $menu[0]->nama }}</h1>
                 <p class="mb-4 h4">Rp {{ $menu[0]->harga }}</p>
                 <hr>
-                <form action="/tambah-keranjang/{{ $menu[0]->id }}" method="POST">
+                <form action="/tambah-pesanan/{{ $menu[0]->id }}" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-6">
                             <div class="tombol-jumlah d-flex justify-content-around">
                                 <button type="button" class="btn" id="keranjangKurang">-</button>
-                                <input type="number" name="jumlah_menu" id="jumlah" value="0">
+                                <input type="text" name="jumlah_menu" id="jumlah" value="0">
                                 <button type="button" class="btn" id="keranjangTambah">+</button>
                             </div>
                         </div>
@@ -42,13 +42,13 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-6 tombol">
-                            <button class="btn text-light" id="tambahKeranjang" type="submit">Tambahkan di
-                                Keranjang</button>
+                        <button class="btn btnn text-light" id="tambahKeranjang" type="submit">Pesan Sekarang</button>
+                        {{-- <div class="col-6 tombol">
+                            <button class="btn text-light" id="tambahKeranjang" type="submit">Tambahkan di Keranjang</button>
                         </div>
                         <div class="col-6 tombol">
                             <a class="btn text-light" href="bandingkan.html">Bandingan Menu</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </form>
             </div>
@@ -56,14 +56,13 @@
         <hr>
 
         <h3>Deskripsi Produk</h3>
-        <p class="fw mb-4">Nasi Kuning, Ayam Goreng/Bakar/Bakar Bumbu Rujak, Sambal Trasi, Perkedel , Telor Asin, Kering
-            Kentang, Sambal Goreng Kentang Ati, Mie Goreng, Sempol, Udang Penyet, Sate Lilit, Bronies Coklat 30 cm</p>
+        <p class="fw mb-4">{{ $menu[0]->deskripsi }}</p>
         <h3>Kisaran Porsi</h3>
-        <p class="fw mb-4">15 - 20 Orang</p>
+        <p class="fw mb-4">{{ $menu[0]->kisaran_porsi }}</p>
         <h3>Pengemasan</h3>
-        <p class="fw mb-4">Triplek Kotak 100 x 70, Piring, Sendok, Centong Kayu BM, Tisue, Cobek Batu Kecil + Uleg</p>
+        <p class="fw mb-4">{{ $menu[0]->pengemasan }}</p>
         <h3>Catatan Lainnya</h3>
-        <p class="fw mb-4">Pembelian 10 gratis 1</p>
+        <p class="fw mb-4">{{ $menu[0]->catatan_lainnya }}</p>
 
         @if (session()->has('keranjang'))
             <div class="{{ session('keranjang') }} notiff justify-content-center align-items-center">

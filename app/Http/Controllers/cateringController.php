@@ -39,7 +39,7 @@ class cateringController extends Controller
         ]);
     }
 
-    public function tambahKeranjang(Request $request, Menu $menu)
+    public function tambahCatering(Request $request, Menu $menu)
     {
         $validasi = $request->validate([
             'jumlah_menu' => 'required|integer'
