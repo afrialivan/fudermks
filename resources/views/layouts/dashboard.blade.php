@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My School</title>
     <link rel="stylesheet" href="{{ asset('css/dashboard/bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/css/dashboard/lineicons.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/css/dashboard/materialdesignicons.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/css/dashboard/fullcalendar.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/css/dashboard/main.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/dashboard/lineicons.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/dashboard/materialdesignicons.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/dashboard/fullcalendar.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/dashboard/main.css') }}" />
 </head>
 
 <body>
