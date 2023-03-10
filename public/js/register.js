@@ -12,4 +12,5 @@ nama.oninput = () => {
   
   document.getElementById('slug').value = namaSplit.join('-').toLowerCase()
 
+  // console.log(namaSplit.join('-').toLowerCase());
 }

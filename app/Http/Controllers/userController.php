@@ -55,36 +55,40 @@ class userController extends Controller
     {
         $validateduser = $request->validate(
             [
-                "email" => ['required'],
-                "tlp" => ['required'],
-                "name" => ['required'],
-                "nik" => ['required'],
-                "tgl_lahir" => ['required'],
-                "alamat" => ['required'],
-                "username" => ['required', 'unique:users'],
-                "password" => ['required'],
-                "confirmpassword" => ['required', 'same:password'],
+                "email" => 'required',
+                "tlp" => 'required',
+                "name" => 'required',
+                "nik" => 'required',
+                "tgl_lahir" => 'required',
+                "alamat" => 'required',
+                "username" => 'required', 'unique:users',
+                "password" => 'required',
+                "confirmpassword" => 'required', 'same:password',
+                "ktp" => 'required',
+                "selfi_ktp" => 'required',
+                "namacatering" => 'required',
+                "deskripsi" => 'required',
+                "logo" => 'required',
+                "alamatcatering" => 'required',
+                // "slug" => 'required',
             ],
-            [
-                'tlp.required' => 'telepon harus di isi'
-            ]
+            // [
+            //     'tlp.required' => 'telepon harus di isi'
+            // ]
         );
 
-        $validatedcatering = $request->validate(
-            [
-                "ktp" => ['required'],
-                "selfi_ktp" => ['required'],
-                "namacatering" => ['required'],
-                "deskripsi" => ['required'],
-                "logo" => ['required'],
-                "alamatcatering" => ['required'],
-                "slug" => ['required'],
-            ],
-        );
-        dd($validatedcatering['slug']);
-
-        // $id = User::latest()->get();
-        // dd($id[0]->id+1);
+        User::create($validateduser);
+        $user = User::where('name', $request->name)->get();
+        Catering::create([
+            "ktp" => $request->ktp,
+            "selfi_ktp" => $request->selfi_ktp,
+            "nama" => $request->namacatering,
+            "deskripsi" => $request->deskripsi,
+            "logo" => $request->logo,
+            "alamat" => $request->alamatcatering,
+            "slug" => $request->slug,
+            "id_user" => $user[0]->id,
+        ]);
 
         return redirect('/login')->with('proses', 'Akun anda telah berhasil dibuat, silahkan hubungi admin untuk verifikasi');
     }
