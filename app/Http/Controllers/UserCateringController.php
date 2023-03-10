@@ -25,6 +25,36 @@ class UserCateringController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+     public function menu_view()
+     {
+         return view('catering.menu');
+     }
+
+     public function kategori_view()
+     {
+         return view('catering.kategori');
+     }
+
+     public function blm_konfir_view()
+     {
+         return view('catering.blmkonfir');
+     }
+
+     public function blm_bayar_view()
+     {
+         return view('catering.blmbayar');
+     }
+
+     public function proses_view()
+     {
+         return view('catering.proses');
+     }
+
+     public function selesai_view()
+     {
+         return view('catering.selesai');
+     }
+
     public function menu()
     {
         return view('catering.menu.index', [
