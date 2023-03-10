@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Catering;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -46,27 +47,42 @@ class userController extends Controller
     }
 
     public function storeregistercatering(Request $request){
-        $validated = $request->validate([
-            "email" => ['required'],
-            "tlp" => ['required'],
-            "name" => ['required'],
-            "nik" => ['required'],
-            "tgl_lahir" => ['required'],
-            "alamat" => ['required'],
-            "ktp" => ['required'],
-            "selfi_ktp" => ['required'],
-            "namacatering" => ['required'],
-            "deskripsi" => ['required'],
-            "logo" => ['required'],
-            "alamatcatering" => ['required'],
-            "username" => ['required', 'unique:users'],
-            "password" => ['required'],
-            "confirmpassword" => ['required','same:password'],
-        ]);
+//         $validateduser = $request->validate([
+//             "email" => ['required'],
+//             "tlp" => ['required'],
+//             "name" => ['required'],
+//             "nik" => ['required'],
+//             "tgl_lahir" => ['required'],
+//             "alamat" => ['required'],
+//             "username" => ['required', 'unique:users'],
+//             "password" => ['required'],
+//             "confirmpassword" => ['required','same:password'],
+//         ],
+//         [
+//             'tlp.required' => 'telepon harus di isi'
+//         ]
+//     );
 
-        $validated['password'] = bcrypt($validated['password']);
-        $validated['status'] = 'belum';
-        User::create($validated);
+//     $validatedcatering = $request->validate([
+//         "ktp" => ['required'],
+//         "selfi_ktp" => ['required'],
+//         "namacatering" => ['required'],
+//         "deskripsi" => ['required'],
+//         "logo" => ['required'],
+//         "alamatcatering" => ['required'],
+//     ],
+//     [
+        
+//     ]
+// );
+
+        $id = User::latest()->get();
+        dd($id[0]->id+1);
+        // $validatedcatering['id_user'] = $id->id+1;
+        // $validateduser['password'] = bcrypt($validateduser['password']);
+        // $validateduser['status'] = 'belum';
+        // User::create($validateduser);
+        // Catering::create($validatedcatering);
 
         return redirect('/login')->with('proses', 'Akun anda telah berhasil dibuat, silahkan hubungi admin untuk verifikasi');
     }
