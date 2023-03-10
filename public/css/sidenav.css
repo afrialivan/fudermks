@@ -110,11 +110,12 @@ main {
   .nav-a {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: calc(8rem + 20vh);
+    /* justify-content: space-between; */
+    /* height: calc(8rem + 20vh); */
   }
 
   .nav-a a {
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
     margin-left: calc(2rem + ((1vw - 7.68px) * 0.6944));
