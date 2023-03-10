@@ -58,7 +58,7 @@ class UserCateringController extends Controller
     public function menu()
     {
         return view('catering.menu.index', [
-            'items' => Item::where('id_user', auth()->user()->id)->get(),
+            // 'items' => Item::where('id_user', auth()->user()->id)->get(),
         ]);
     }
 

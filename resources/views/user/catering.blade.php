@@ -12,10 +12,10 @@
             @foreach ($caterings as $catering)
                 <div class="cardd">
                     <a class="text-decoration-none" href="catering/{{ $catering->slug }}">
-                        <img src="img/Pratama.png" alt="">
+                        <img src="{{ asset('storage/' . $catering->logo) }}" alt="">
                         <div class="text-cardd">
                             <h3 class="fw-bold">{{ $catering->nama }}</h3>
-                            <p>{{ $catering->deskripsi }}</p>
+                            <p>{{ $catering->alamat }}</p>
                         </div>
                     </a>
                 </div>

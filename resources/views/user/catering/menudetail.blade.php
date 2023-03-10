@@ -1,9 +1,9 @@
 @extends('layouts.main')
 
 @section('style')
-    <link rel="stylesheet" href="../../../css/pilihan-menu.css">
-    <link rel="stylesheet" href="../../../css/sidenav.css">
-    <link rel="stylesheet" href="../../../css/footer.css">
+    <link rel="stylesheet" href="{{ asset('css/pilihan-menu.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/sidenav.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 @endsection
 
 @section('container')
@@ -17,7 +17,7 @@
             <!-- <hr> -->
         </nav>
         <div class="row">
-            <div class="col-lg-5"><img src="../../../img/gambar1.png" alt="" class="gambar"></div>
+            <div class="col-lg-5"><img src="{{ asset($menu[0]->foto) }}" alt="" class="gambar"></div>
             <div class="col-lg-7">
                 {{-- @dd($menu) --}}
                 <h1 class="mt-3">{{ $menu[0]->nama }}</h1>

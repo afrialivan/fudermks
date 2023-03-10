@@ -35,6 +35,7 @@ class cateringController extends Controller
             'title' => 'Detail Menu',
             'catering' => $catering,
             'menu' => Menu::where('id_catering', $catering->id)->get(),
+            // dd(Menu::where('id_catering', $catering->id)->get())
         ]);
     }
 

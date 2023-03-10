@@ -29,6 +29,8 @@ Route::group(['middleware' => 'guest'], function () {
 });
 
 Route::get('/logout', [userController::class, 'logout']);
+Route::get('/profil', [userController::class, 'profil']);
+
 Route::get('/catering', [cateringController::class, 'semuaCatering']);
 Route::get('/catering/{catering:slug}', [cateringController::class, 'show']);
 Route::get('/catering/{catering:slug}/{menu:slug}', [cateringController::class, 'menuDetail']);

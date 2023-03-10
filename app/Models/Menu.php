@@ -18,7 +18,4 @@ class Menu extends Model
         return $this->hasMany(Keranjang::class);
     }
 
-    public function item() {
-        return $this->belongsTo(Item::class);
-    }
 }
