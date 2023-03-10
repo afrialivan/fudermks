@@ -18,15 +18,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [cateringController::class, 'index']);
-Route::get('/login', [userController::class, 'index']);
-Route::post('/login', [userController::class, 'login']);
+
+Route::group(['middleware' => 'guest'], function () {
+  Route::get('/login', [userController::class, 'index']);
+  Route::post('/login', [userController::class, 'login']);
+  Route::get('/registerpelanggan', [userController::class, 'registerpelanggan']);
+  Route::post('/registercatering', [userController::class, 'storeregistercatering']);
+  Route::get('/registercatering', [userController::class, 'registercatering']);
+});
+
 Route::get('/logout', [userController::class, 'logout']);
-
-Route::get('/registerpelanggan', [userController::class, 'registerpelanggan']);
-
-Route::post('/registercatering', [userController::class, 'storeregistercatering']);
-Route::get('/registercatering', [userController::class, 'registercatering']);
-
 Route::get('/catering', [cateringController::class, 'semuaCatering']);
 Route::get('/catering/{catering:slug}', [cateringController::class, 'show']);
 Route::get('/catering/{catering:slug}/{menu:slug}', [cateringController::class, 'menuDetail']);
