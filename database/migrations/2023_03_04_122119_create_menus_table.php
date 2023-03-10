@@ -22,6 +22,10 @@ class CreateMenusTable extends Migration
             $table->text('isi_menu');
             $table->enum('jenis', ['prasmanan', 'nasi kotak', 'snack/jajanan', 'menu lain', 'minuman']);
             $table->text('foto')->nullable();
+            $table->text('deskripsi');
+            $table->text('kisaran_porsi');
+            $table->text('pengemasan');
+            $table->text('catatan_lainnya')->nullable();
             $table->timestamps();
         });
     }
