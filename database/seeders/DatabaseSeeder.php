@@ -70,9 +70,10 @@ class DatabaseSeeder extends Seeder
 
         Menu::create([
             'id_catering' => 1,
-            'nama' => 'ayam bakar rica rica',
+            'nama' => 'Paket 1',
             'harga' => 19000,
-            'slug' => 'ayam-bakar-rica-rica',
+            'slug' => 'paket-1',
+            'isi_menu' => 'Nasi putih, Sup terang bulan / sup cream jagung ayam cincang, Udang Tempura / Udang Furay/ Kakap Crispy, Cabe Hijau Sosis + Daging / Lada Hitam Fillet Ayam/ Ca Fillet Ayam,Galantine/ Fuyung Hay/ Ayam Katsu, Ca Buncis Ayam Cincang/ Capcay, Salad Buah',
             'jenis' => 'prasmanan'
         ]);
         Keranjang::create([
@@ -80,11 +81,6 @@ class DatabaseSeeder extends Seeder
             'id_menu' => 1,
             'jumlah_menu' => 8,
             'total' => 10000,
-        ]);
-        Item::create([
-            'id_menu' => 1,
-            'id_user' => 2,
-            'isi_menu' => 'Nasi Goreng Bakar',
         ]);
 
     }

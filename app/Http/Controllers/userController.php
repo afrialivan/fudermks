@@ -81,4 +81,11 @@ class userController extends Controller
 
         return redirect('/login')->with('proses', 'Akun anda telah berhasil dibuat, silahkan hubungi admin untuk verifikasi');
     }
+
+    public function profil() {
+        return view('user.profil.index',[
+            'title' => 'Profil',
+            'user' => User::where('id', auth()->user()->id)->get(),
+        ]);
+    }
 }

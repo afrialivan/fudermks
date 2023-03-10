@@ -19,6 +19,7 @@ class CreateMenusTable extends Migration
             $table->string('nama');
             $table->integer('harga');
             $table->string('slug');
+            $table->text('isi_menu');
             $table->enum('jenis', ['prasmanan', 'nasi kotak', 'snack/jajanan', 'menu lain', 'minuman']);
             $table->text('foto')->nullable();
             $table->timestamps();

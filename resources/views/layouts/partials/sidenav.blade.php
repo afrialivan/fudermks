@@ -2,7 +2,7 @@
   <nav class="side-nav" id="side-nav">
 
     <div class="nav-container">
-      <a href="profil.html" class="text-decoration-none">
+      <a href="/profil" class="text-decoration-none">
         <div class="nav-foto">
           <div class="foto">
             <img src="img/profil.png" alt="">

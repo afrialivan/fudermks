@@ -99,7 +99,7 @@
                         <div class="text-menu">
                             <p class="h2 mb-1 fw-bold">{{ $menu->nama }}</p>
                             <p class="h3 fw-bold bg-success text-light p-1">Rp {{ $menu->harga }}</p>
-                            <p class="fs-6">Nasi putih, Sup terang bulan / sup cream jagung ayam cincang, Udang Tempura / Udang Furay/ Kakap Crispy, Cabe Hijau Sosis + Daging / Lada Hitam Fillet Ayam/ Ca Fillet Ayam,Galantine/ Fuyung Hay/ Ayam Katsu, Ca Buncis Ayam Cincang/ Capcay, Salad Buah</p>
+                            <p class="fs-6">{{ $menu->isi_menu }}</p>
                             <div class="d-grid">
                                 <a href="/catering/{{ $catering->slug }}/{{ $menu->slug }}" class="btn btn-outline-success">Pesan</a>
                             </div>
