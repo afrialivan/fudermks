@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Catering;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,6 +25,10 @@ class userController extends Controller
                 return redirect('/dashboard/index');
             }
             if(auth()->user()->role === 'catering') {
+                // $catering = Catering::where('id', auth()->user()->id);
+                // if($catering == null) {
+                //     dd('oi');
+                // }
                 return redirect('/dashboard/catering/home');
             }
             return redirect('/catering');

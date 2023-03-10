@@ -15,11 +15,11 @@ class CreateCateringsTable extends Migration
     {
         Schema::create('caterings', function (Blueprint $table) {
             $table->id();
-            $table->string('id_user');
-            $table->string('ig');
+            $table->string('id_user')->nullable();
+            $table->string('ig')->nullable();
             $table->string('nama');
             $table->string('slug');
-            $table->text('deskripsi');
+            $table->text('deskripsi')->nullable();
             $table->text('alamat');
             $table->text('logo');
             $table->text('ktp');

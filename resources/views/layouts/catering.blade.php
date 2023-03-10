@@ -16,11 +16,11 @@
 
 <body>
 
-    @include('partials.dashboard.catering.sidenav')
+    @include('layouts.partials.dashboard.catering.sidenav')
     <main class="main-wrapper">
-        @include('partials.dashboard.header')
+        @include('layouts.partials.dashboard.header')
         @yield('container')
-        @include('partials.dashboard.footer')
+        @include('layouts.partials.dashboard.footer')
     </main>
 
 
