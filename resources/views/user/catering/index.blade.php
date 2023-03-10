@@ -89,7 +89,7 @@
 
         @foreach ($menus as $menu)
             <div class="content mt-5 d-block m-auto shadow px-3 pb-4 pt-3 rounded">
-                <div class="row justify-content-center align-items-center">
+                <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-12 col-sm-12 col-12">
                         <div class="img-menu d-block m-auto rounded-lg mb-3">
                             <img class="d-block m-auto" src="http://source.unsplash.com/500x500?catering" alt="">
@@ -99,29 +99,7 @@
                         <div class="text-menu">
                             <p class="h2 mb-1 fw-bold">{{ $menu->nama }}</p>
                             <p class="h3 fw-bold bg-success text-light p-1">Rp {{ $menu->harga }}</p>
-                            <ol>
-                                <li>
-                                    <p class="fs-6">Nasi putih</p>
-                                </li>
-                                <li>
-                                    <p class="fs-6">Sup terang bulan / sup cream jagung ayam cincang</p>
-                                </li>
-                                <li>
-                                    <p class="fs-6">Udang Tempura / Udang Furay/ Kakap Crispy</p>
-                                </li>
-                                <li>
-                                    <p class="fs-6">Cabe Hijau Sosis + Daging / Lada Hitam Fillet Ayam/ Ca Fillet Ayam</p>
-                                </li>
-                                <li>
-                                    <p class="fs-6">Galantine/ Fuyung Hay/ Ayam Katsu</p>
-                                </li>
-                                <li>
-                                    <p class="fs-6">Ca Buncis Ayam Cincang/ Capcay</p>
-                                </li>
-                                <li>
-                                    <p class="fs-6">Salad Buah</p>
-                                </li>
-                            </ol>
+                            <p class="fs-6">Nasi putih, Sup terang bulan / sup cream jagung ayam cincang, Udang Tempura / Udang Furay/ Kakap Crispy, Cabe Hijau Sosis + Daging / Lada Hitam Fillet Ayam/ Ca Fillet Ayam,Galantine/ Fuyung Hay/ Ayam Katsu, Ca Buncis Ayam Cincang/ Capcay, Salad Buah</p>
                             <div class="d-grid">
                                 <a href="/catering/{{ $catering->slug }}/{{ $menu->slug }}" class="btn btn-outline-success">Pesan</a>
                             </div>
