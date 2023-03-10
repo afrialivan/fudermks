@@ -15,7 +15,8 @@
 
 <body>
 
-    @include('layouts.partials.dashboard.sidenav')
+    @include('layouts.partials.dashboard.catering.sidenav')
+    {{-- @include('layouts.partials.dashboard.sidenav') --}}
     <main class="main-wrapper">
         @include('layouts.partials.dashboard.header')
         @yield('container')
