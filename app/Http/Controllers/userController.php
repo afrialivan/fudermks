@@ -22,10 +22,10 @@ class userController extends Controller
         if(Auth::attempt($validasi)) {
             $request->session()->regenerate();
             if(auth()->user()->role === 'admin') {
-                return redirect('/dashboard/index');
+                return redirect('/dashboard');
             }
             if(auth()->user()->role === 'catering') {
-                return redirect('/dashboard/catering/home');
+                return redirect('/dashboard');
             }
             return redirect('/catering');
         }
@@ -78,11 +78,6 @@ class userController extends Controller
 
         $id = User::latest()->get();
         dd($id[0]->id+1);
-        // $validatedcatering['id_user'] = $id->id+1;
-        // $validateduser['password'] = bcrypt($validateduser['password']);
-        // $validateduser['status'] = 'belum';
-        // User::create($validateduser);
-        // Catering::create($validatedcatering);
 
         return redirect('/login')->with('proses', 'Akun anda telah berhasil dibuat, silahkan hubungi admin untuk verifikasi');
     }

@@ -17,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [cateringController::class, 'index']);
+
 
 Route::group(['middleware' => 'guest'], function () {
+  Route::get('/', [cateringController::class, 'index']);
   Route::get('/login', [userController::class, 'index']);
   Route::post('/login', [userController::class, 'login']);
   Route::get('/registerpelanggan', [userController::class, 'registerpelanggan']);
@@ -36,6 +37,6 @@ Route::get('/keranjang', [cateringController::class, 'keranjang']);
 Route::get('/menu', [cateringController::class, 'menu']);
 Route::get('/pesanan', [cateringController::class, 'pesanan']);
 
-Route::get('/dashboard/index', [DashboardController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/dashboard/catering/home', [UserCateringController::class, 'index']);
 Route::get('/dashboard/catering/menu', [UserCateringController::class, 'menu']);
