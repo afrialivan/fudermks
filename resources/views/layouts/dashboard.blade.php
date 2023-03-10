@@ -15,11 +15,11 @@
 
 <body>
 
-    @include('partials.dashboard.sidenav')
+    @include('layouts.partials.dashboard.sidenav')
     <main class="main-wrapper">
-        @include('partials.dashboard.header')
+        @include('layouts.partials.dashboard.header')
         @yield('container')
-        @include('partials.dashboard.footer')
+        @include('layouts.partials.dashboard.footer')
     </main>
 
 

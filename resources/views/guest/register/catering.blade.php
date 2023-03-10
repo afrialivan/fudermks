@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Register Catering</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/dashboard/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="css/register-catering.css">
 </head>
 
@@ -25,13 +24,15 @@
                     <div class="col-12 col-lg-6 col-sm-6 col-md-6">
                         <div class="mb-3">
                             <label for="input" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="input" name="email">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="input" name="email" value="{{ old('email') }}">
+                            @error('email') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 col-sm-6 col-md-6">
                         <div class="mb-3">
                             <label for="input" class="form-label">Nomor Telepon</label>
-                            <input type="text" class="form-control" id="input" name="tlp">
+                            <input type="text" class="form-control @error('tlp') is-invalid @enderror" id="input" name="tlp" value="{{ old('tlp') }} " >
+                            @error('tlp') <div class="invalid-feedback">{{ $message }}</div> @enderror
                         </div>
                     </div>
                 </div>

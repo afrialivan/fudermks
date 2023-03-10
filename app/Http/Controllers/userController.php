@@ -22,14 +22,10 @@ class userController extends Controller
         if(Auth::attempt($validasi)) {
             $request->session()->regenerate();
             if(auth()->user()->role === 'admin') {
-                return redirect('/dashboard/index');
+                return redirect('/dashboard');
             }
             if(auth()->user()->role === 'catering') {
-                // $catering = Catering::where('id', auth()->user()->id);
-                // if($catering == null) {
-                //     dd('oi');
-                // }
-                return redirect('/dashboard/catering/home');
+                return redirect('/dashboard');
             }
             return redirect('/catering');
         }
@@ -51,27 +47,37 @@ class userController extends Controller
     }
 
     public function storeregistercatering(Request $request){
-        $validated = $request->validate([
-            "email" => ['required'],
-            "tlp" => ['required'],
-            "name" => ['required'],
-            "nik" => ['required'],
-            "tgl_lahir" => ['required'],
-            "alamat" => ['required'],
-            "ktp" => ['required'],
-            "selfi_ktp" => ['required'],
-            "namacatering" => ['required'],
-            "deskripsi" => ['required'],
-            "logo" => ['required'],
-            "alamatcatering" => ['required'],
-            "username" => ['required', 'unique:users'],
-            "password" => ['required'],
-            "confirmpassword" => ['required','same:password'],
-        ]);
+//         $validateduser = $request->validate([
+//             "email" => ['required'],
+//             "tlp" => ['required'],
+//             "name" => ['required'],
+//             "nik" => ['required'],
+//             "tgl_lahir" => ['required'],
+//             "alamat" => ['required'],
+//             "username" => ['required', 'unique:users'],
+//             "password" => ['required'],
+//             "confirmpassword" => ['required','same:password'],
+//         ],
+//         [
+//             'tlp.required' => 'telepon harus di isi'
+//         ]
+//     );
 
-        $validated['password'] = bcrypt($validated['password']);
-        $validated['status'] = 'belum';
-        User::create($validated);
+//     $validatedcatering = $request->validate([
+//         "ktp" => ['required'],
+//         "selfi_ktp" => ['required'],
+//         "namacatering" => ['required'],
+//         "deskripsi" => ['required'],
+//         "logo" => ['required'],
+//         "alamatcatering" => ['required'],
+//     ],
+//     [
+        
+//     ]
+// );
+
+        $id = User::latest()->get();
+        dd($id[0]->id+1);
 
         return redirect('/login')->with('proses', 'Akun anda telah berhasil dibuat, silahkan hubungi admin untuk verifikasi');
     }

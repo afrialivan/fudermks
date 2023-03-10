@@ -20,10 +20,14 @@
         <img src="img/image 24.svg" alt="" class="bg2">
         <h2>Masuk</h2>
 
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        @if(session()->has('proses'))
+
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            {{ session('proses') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
+        </div>
+
+        @endif
 
         <form action="/login" method="POST">
           @csrf
