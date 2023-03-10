@@ -19,7 +19,7 @@
         </nav>
 
         <div class="row">
-            <div class="col-lg-6"><img src="../img/seruni.png" alt="" class="gambar"></div>
+            <div class="col-lg-6"><img src="{{ asset('storage/' . $catering->logo) }}" alt="" class="gambar"></div>
             <div class="col-lg-6">
                 <h1 class="mt-2">{{ $catering->nama }}</h1>
                 <p class="mb-4">{{ $catering->alamat }}</p>

@@ -19,7 +19,7 @@
         <div class="kotak bg-light d-block m-auto rounded-3 p-4 mt-3">
             <p class="h2 text-center">Pendaftaran Catering</p>
             <p class="h6 mt-4">Data Pemilik</p>
-            <form action="/registercatering" method="POST">
+            <form action="/registercatering" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-12 col-lg-6 col-sm-6 col-md-6">
@@ -116,7 +116,7 @@
                             @error('namacatering')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
-                            <input type="hidden" class="form-control" id="slug" name="slug">
+                            <input type="hidden" class="form-control" id="slug" name="slug" value="">
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 col-sm-6 col-md-6">
@@ -133,7 +133,7 @@
                     <div class="col-12 col-lg-6 col-sm-6 col-md-6">
                         <div class="mb-3">
                             <label for="input" class="form-label">Logo Catering</label>
-                            <input value="{{ old('logo') }}" class="form-control @error('logo') is-invalid @enderror" type="file" id="formFile" name="logo">
+                            <input class="form-control @error('logo') is-invalid @enderror" type="file" id="formFile" name="logo">
                             @error('logo')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror

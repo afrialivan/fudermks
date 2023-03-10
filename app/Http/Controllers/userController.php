@@ -68,7 +68,6 @@ class userController extends Controller
                 "selfi_ktp" => 'required',
                 "namacatering" => 'required',
                 "deskripsi" => 'required',
-                "logo" => 'required',
                 "alamatcatering" => 'required',
                 // "slug" => 'required',
             ],
@@ -77,6 +76,13 @@ class userController extends Controller
             // ]
         );
 
+        $foto = $request->file('logo');
+        $validateduser['logo'] = 'img/' . $foto->hashName();
+        $foto->storeAs('public/img/' , $foto->hashName());
+
+        // if($request->file('logo')) {
+        //     $validateduser['logo'] = $request->file('logo')->store('images');     
+        // }
         User::create($validateduser);
         $user = User::where('name', $request->name)->get();
         Catering::create([
@@ -84,7 +90,7 @@ class userController extends Controller
             "selfi_ktp" => $request->selfi_ktp,
             "nama" => $request->namacatering,
             "deskripsi" => $request->deskripsi,
-            "logo" => $request->logo,
+            "logo" => $validateduser['logo'],
             "alamat" => $request->alamatcatering,
             "slug" => $request->slug,
             "id_user" => $user[0]->id,

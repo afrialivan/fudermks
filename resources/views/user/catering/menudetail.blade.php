@@ -17,7 +17,7 @@
             <!-- <hr> -->
         </nav>
         <div class="row">
-            <div class="col-lg-5"><img src="../../../img/gambar1.png" alt="" class="gambar"></div>
+            <div class="col-lg-5"><img src="{{ asset('storage/' . $catering->logo) }}" alt="" class="gambar"></div>
             <div class="col-lg-7">
                 {{-- @dd($menu) --}}
                 <h1 class="mt-3">{{ $menu[0]->nama }}</h1>
