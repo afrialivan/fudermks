@@ -21,7 +21,7 @@
 
               @can('catering')
               <li class="nav-item nav-item-has-children {{ Request::is('dashboard/menu') || Request::is('dashboard/kategori') ? 'active' : '' }}">
-                  <a href="/" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_2"
+                  <a href="#" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_2"
                       aria-controls="ddmenu_2" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="icon">
                           <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
@@ -45,7 +45,7 @@
 
               @can('catering')
               <li class="nav-item nav-item-has-children {{ Request::is('dashboard/pesanan/belumkonfir') || Request::is('dashboard/pesanan/belumbayar') || Request::is('dashboard/pesanan/proses') || Request::is('dashboard/pesanan/selesai') ? 'active' : '' }}">
-                  <a href="/" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_3"
+                  <a href="#" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_3"
                       aria-controls="ddmenu_3" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="icon">
                           <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
@@ -75,7 +75,7 @@
 
               @can('admin')
                   <li class="nav-item nav-item-has-children">
-                      <a href="/" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_4"
+                      <a href="#" class="collapsed" data-bs-toggle="collapse" data-bs-target="#ddmenu_4"
                           aria-controls="ddmenu_2" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="icon">
                               <svg width="22" height="22" viewBox="0 0 22 22" fill="none"

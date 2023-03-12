@@ -98,9 +98,10 @@
 
   .link-pendaftaran {
     justify-items: center;
+    text-decoration: none !important;
   }
   
-  .link {
+  .linkk {
     display: inline-block;
     grid-column: span 12;
     text-align: center;
@@ -110,9 +111,16 @@
     border: 3px solid var(--primary);
     color: var(--primary);
     font-weight: 600;
+    transition: .3s;
+  }
+  
+  .linkk:hover {
+    transition: .3s;
+    background-color: #6D8B74 !important;
+    color: white !important;
   }
 
-  .link:nth-child(1) {
+  .linkk:nth-child(1) {
     margin-top: 40px;
     margin-bottom: 10px;
   }
@@ -133,15 +141,15 @@
       align-items: center;
       justify-content: space-between;
     }
-    .link {
+    .linkk {
       width: 200px;
     }
-    .link:nth-child(1) {
+    .linkk:nth-child(1) {
       grid-column: 5/7;
       margin-top: 0;
       margin-bottom: 0;
     }
-    .link:nth-child(2) {
+    .linkk:nth-child(2) {
       grid-column: 8/9;
     }
     .bg1 {
