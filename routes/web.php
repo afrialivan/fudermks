@@ -49,7 +49,9 @@ Route::get('/dashboard/kategori', [UserCateringController::class, 'kategori_view
 Route::get('/dashboard/pesanan/belumkonfir', [UserCateringController::class, 'blm_konfir_view']);
 Route::post('/dashboard/pesanan/belumkonfir/{pesanan}', [UserCateringController::class, 'blm_konfir_store']);
 Route::get('/dashboard/pesanan/belumbayar', [UserCateringController::class, 'blm_bayar_view']);
+Route::post('/dashboard/pesanan/belumbayar/{pesanan}', [UserCateringController::class, 'blm_bayar_store']);
 Route::get('/dashboard/pesanan/proses', [UserCateringController::class, 'proses_view']);
+Route::post('/dashboard/pesanan/proses/{pesanan}', [UserCateringController::class, 'proses_store']);
 Route::get('/dashboard/pesanan/selesai', [UserCateringController::class, 'selesai_view']);
 Route::get('/dashboard/pesanan/hapus/{pesanan}', [UserCateringController::class, 'destroy']);
 

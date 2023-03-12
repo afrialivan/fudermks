@@ -134,8 +134,7 @@
                                                                 <button type="button" class="btn btn-secondary"
                                                                     data-bs-dismiss="modal">Close</button>
                                                                 <a href="/dashboard/pesanan/hapus/{{ $pesanan->id }}" class="btn btn-danger">Batalkan</a>
-                                                                <button type="submit" class="btn btn-primary">Send
-                                                                    message</button>
+                                                                <button type="submit" class="btn btn-primary">Konfirmasi</button>
                                                             </div>
                                                         </form>
                                                     </div>

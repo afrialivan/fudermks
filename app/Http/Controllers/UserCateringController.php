@@ -106,21 +106,54 @@ class UserCateringController extends Controller
             'pesanans' => Pesanan::where('id_catering', session('dataCatering')->id)->where('status', 'Belum Bayar')->get()
         ]);
     }
+    public function blm_bayar_store(Request $request, Pesanan $pesanan)
+    {
+        // dd($pesanan);
+
+        Pesanan::where('id', $pesanan->id)->update([
+            'total' => $pesanan->total,
+            'tgl_pengantaran' => $pesanan->tgl_pengantaran,
+            'id_catering' => $pesanan->id_catering,
+            'id_user' => $pesanan->id_user,
+            'id_menu' => $pesanan->id_menu,
+            'jumlah_menu' => $pesanan->jumlah_menu,
+            'status' => 'Proses',
+        ]);
+
+        return redirect('/dashboard/pesanan/proses');
+    }
 
     public function proses_view()
     {
-        return view('catering.proses');
+        return view('catering.proses', [
+            'pesanans' => Pesanan::where('id_catering', session('dataCatering')->id)->where('status', 'Proses')->get()
+        ]);
+    }
+    public function proses_store(Request $request, Pesanan $pesanan)
+    {
+        Pesanan::where('id', $pesanan->id)->update([
+            'total' => $pesanan->total,
+            'tgl_pengantaran' => $pesanan->tgl_pengantaran,
+            'id_catering' => $pesanan->id_catering,
+            'id_user' => $pesanan->id_user,
+            'id_menu' => $pesanan->id_menu,
+            'jumlah_menu' => $pesanan->jumlah_menu,
+            'status' => 'Selesai',
+        ]);
+
+        return redirect('/dashboard/pesanan/selesai');
     }
 
     public function selesai_view()
     {
-        return view('catering.selesai');
+        return view('catering.selesai', [
+            'pesanans' => Pesanan::where('id_catering', session('dataCatering')->id)->where('status', 'Selesai')->get()
+        ]);
     }
 
     public function menu()
     {
         return view('catering.menu.index', [
-            // 'items' => Item::where('id_user', auth()->user()->id)->get(),
         ]);
     }
 

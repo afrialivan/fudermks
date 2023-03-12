@@ -85,9 +85,9 @@
                                                 </td>
                                                 <td>
                                                     <div class="action">
-                                                        <button class="text-primary fs-4" data-bs-toggle="modal"
+                                                        <button class="btn btn-outline-primary text-dark" data-bs-toggle="modal"
                                                             data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-                                                            <i class="bi bi-pencil-square"></i>
+                                                            Proses
                                                         </button>
                                                     </div>
                                                 </td>
@@ -99,15 +99,14 @@
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Konfirmasi
-                                                                Pesanan</h1>
+                                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Konfirmasi Proses</h1>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close"></button>
                                                         </div>
-                                                        <form action="/dashboard/pesanan/belumkonfir/{{ $pesanan->id }}"
+                                                        <form action="/dashboard/pesanan/belumbayar/{{ $pesanan->id }}"
                                                             method="POST">
                                                             @csrf
-                                                            <div class="modal-body">
+                                                            {{-- <div class="modal-body">
                                                                 <div class="mb-3">
                                                                     <label for="recipient-name" class="col-form-label">Total
                                                                         Harga:</label>
@@ -122,13 +121,11 @@
                                                                         id="recipient-name" name="tgl_pengantaran"
                                                                         value="{{ $pesanan->tgl_pengantaran }}">
                                                                 </div>
-                                                            </div>
+                                                            </div> --}}
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary"
                                                                     data-bs-dismiss="modal">Close</button>
-                                                                <a class="btn btn-danger">Batalkan</a>
-                                                                <button type="submit" class="btn btn-primary">Send
-                                                                    message</button>
+                                                                <button class="btn btn-primary" type="submit">Proses</button>
                                                             </div>
                                                         </form>
                                                     </div>
