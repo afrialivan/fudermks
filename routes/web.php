@@ -42,6 +42,8 @@ Route::get('/pesanan', [cateringController::class, 'pesanan']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
 Route::get('/dashboard/menu', [UserCateringController::class, 'menu_view']);
+Route::get('/dashboard/menu/tambah-menu', [UserCateringController::class, 'menu_tambah']);
+Route::post('/dashboard/menu/tambah-menu', [UserCateringController::class, 'menu_tambah_store']);
 Route::get('/dashboard/kategori', [UserCateringController::class, 'kategori_view']);
 
 Route::get('/dashboard/pesanan/belumkonfir', [UserCateringController::class, 'blm_konfir_view']);

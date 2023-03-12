@@ -1,4 +1,3 @@
-
 const nama = document.getElementById('nama')
 const isiNama = document.getElementById('nama').value
 

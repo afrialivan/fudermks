@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKeranjangsTable extends Migration
+class CreateKategorisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateKeranjangsTable extends Migration
      */
     public function up()
     {
-        Schema::create('keranjangs', function (Blueprint $table) {
+        Schema::create('kategoris', function (Blueprint $table) {
             $table->id();
-            $table->string('id_user');
-            $table->string('id_menu');
-            $table->integer('jumlah_menu');
-            $table->integer('total');
-            $table->enum('status', ['belum', 'konfirmasi'])->default('belum');
+            $table->string('id_catering')->nullable();
+            $table->string('isi_kategori');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateKeranjangsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('keranjangs');
+        Schema::dropIfExists('kategoris');
     }
 }

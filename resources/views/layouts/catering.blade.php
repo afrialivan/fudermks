@@ -24,6 +24,7 @@
     </main>
 
 
+    @yield('js')
     <script src="../../js/bootstrap.bundle.min.js"></script>
     <script src="../../js/Chart.min.js"></script>
     <script src="../../js/dynamic-pie-chart.js"></script>

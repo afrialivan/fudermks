@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My School</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('css/dashboard/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/dashboard/lineicons.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/dashboard/materialdesignicons.min.css') }}" />
@@ -24,6 +25,7 @@
     </main>
 
 
+    @yield('js')
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/Chart.min.js') }}"></script>
     <script src="{{ asset('js/dynamic-pie-chart.js') }}"></script>

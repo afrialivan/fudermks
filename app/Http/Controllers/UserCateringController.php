@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Catering;
 use App\Models\Item;
+use App\Models\Kategori;
 use App\Models\Menu;
 use Illuminate\Http\Request;
 
@@ -25,35 +26,74 @@ class UserCateringController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function menu_view()
-     {
-         return view('catering.menu');
-     }
+    public function menu_view()
+    {
+        return view('catering.menu.index', [
+            'menus' => Menu::where('id_catering', session('dataCatering')->id)->get(),
+        ]);
+    }
+    public function menu_tambah()
+    {
+        return view('catering.menu.tambah', [
+            'kategori' => Kategori::where('id_catering', session('dataCatering')->id)->get()
+        ]);
+    }
+    public function menu_tambah_store(Request $request)
+    {
+        // dd($request);
+        $validate = $request->validate([
+            'nama' => 'required',
+            'harga' => 'required',
+            'isi_menu' => 'required',
+            'foto' => 'required',
+            'id_categori' => 'required',
+            'deskripsi' => 'required',
+            'kisaran_porsi' => 'required',
+        'pengemasan' => 'required',
+            'slug' => 'required',
+        ]);
 
-     public function kategori_view()
-     {
-         return view('catering.kategori');
-     }
+        $validate['id_catering'] = session('dataCatering')->id;
 
-     public function blm_konfir_view()
-     {
-         return view('catering.blmkonfir');
-     }
+        if ($request->catatan_lainnya) {
+            $validate['catatan_lainnya'] = $request->catatan_lainnya;
+        }
 
-     public function blm_bayar_view()
-     {
-         return view('catering.blmbayar');
-     }
+        $foto = $request->file('foto');
+        $validate['foto'] = 'img/' . $foto->hashName();
+        $foto->storeAs('public/img/', $foto->hashName());
 
-     public function proses_view()
-     {
-         return view('catering.proses');
-     }
+        // dd($validate);
 
-     public function selesai_view()
-     {
-         return view('catering.selesai');
-     }
+        Menu::create($validate);
+
+        return redirect('/dashboard/menu');
+    }
+
+    public function kategori_view()
+    {
+        return view('catering.kategori');
+    }
+
+    public function blm_konfir_view()
+    {
+        return view('catering.blmkonfir');
+    }
+
+    public function blm_bayar_view()
+    {
+        return view('catering.blmbayar');
+    }
+
+    public function proses_view()
+    {
+        return view('catering.proses');
+    }
+
+    public function selesai_view()
+    {
+        return view('catering.selesai');
+    }
 
     public function menu()
     {

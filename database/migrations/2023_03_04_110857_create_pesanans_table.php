@@ -19,7 +19,7 @@ class CreatePesanansTable extends Migration
             $table->string('id_menu');
             $table->integer('jumlah_menu');
             $table->integer('total');
-            $table->enum('status', ['belum-konfirmasi', 'belum bayar', 'proses', 'selesai'])->default('belum');
+            $table->enum('status', ['belum-konfirmasi', 'belum bayar', 'proses', 'selesai'])->default('belum-konfirmasi');
             $table->timestamps();
         });
     }

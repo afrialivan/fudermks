@@ -92,7 +92,12 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-12 col-sm-12 col-12">
                         <div class="img-menu d-block m-auto rounded-lg mb-3">
-                            <img class="d-block m-auto" src="http://source.unsplash.com/500x500?catering" alt="">
+                            @if ($menu->foto)
+                                <img class="d-block m-auto" src="{{ asset('storage/' . $menu->foto) }}" alt="">
+                            @else
+                                <img class="d-block m-auto" src="http://source.unsplash.com/500x500?catering"
+                                    alt="">
+                            @endif
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-12 col-sm-12 col-12">
@@ -101,7 +106,8 @@
                             <p class="h3 fw-bold bg-success text-light p-1">Rp {{ $menu->harga }}</p>
                             <p class="fs-6">{{ $menu->isi_menu }}</p>
                             <div class="d-grid">
-                                <a href="/catering/{{ $catering->slug }}/{{ $menu->slug }}" class="btn btn-outline-success">Pesan</a>
+                                <a href="/catering/{{ $catering->slug }}/{{ $menu->slug }}"
+                                    class="btn btn-outline-success">Pesan</a>
                             </div>
                         </div>
                     </div>

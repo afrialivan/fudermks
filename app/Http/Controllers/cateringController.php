@@ -55,13 +55,6 @@ class cateringController extends Controller
         return back()->with('keranjang', 'd-flex');
     }
 
-    public function keranjang()
-    {
-        return view('user.keranjang', [
-            'title'  => 'Keranjang',
-            'keranjangs' => Keranjang::where('id_user', auth()->user()->id)->latest()->get()
-        ]);
-    }
 
     public function menu()
     {

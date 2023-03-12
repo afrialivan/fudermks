@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Catering;
 use App\Models\Item;
+use App\Models\Kategori;
 use App\Models\Keranjang;
 use App\Models\Menu;
 use App\Models\User;
@@ -70,21 +71,29 @@ class DatabaseSeeder extends Seeder
 
         Menu::create([
             'id_catering' => 1,
+            'id_categori' => 1,
             'nama' => 'Paket 1',
             'harga' => 19000,
             'slug' => 'paket-1',
             'isi_menu' => 'Nasi putih, Sup terang bulan / sup cream jagung ayam cincang, Udang Tempura / Udang Furay/ Kakap Crispy, Cabe Hijau Sosis + Daging / Lada Hitam Fillet Ayam/ Ca Fillet Ayam,Galantine/ Fuyung Hay/ Ayam Katsu, Ca Buncis Ayam Cincang/ Capcay, Salad Buah',
-            'jenis' => 'prasmanan',
             'deskripsi' => 'Nasi Kuning, Ayam Goreng/Bakar/Bakar Bumbu Rujak, Sambal Trasi, Perkedel , Telor Asin, Kering Kentang, Sambal Goreng Kentang Ati, Mie Goreng, Sempol, Udang Penyet, Sate Lilit, Bronies Coklat 30 cm',
             'kisaran_porsi' => '15 - 20 Orang',
             'pengemasan' => 'Triplek Kotak 100 x 70, Piring, Sendok, Centong Kayu BM, Tisue, Cobek Batu Kecil + Uleg',
             'catatan_lainnya' => 'Pembelian 10 gratis 1',
         ]);
-        Keranjang::create([
-            'id_user' => 1,
-            'id_menu' => 1,
-            'jumlah_menu' => 8,
-            'total' => 10000,
+
+        Kategori::create([
+            'id_catering' => 1,
+            'isi_kategori' => 'Prasmanan'
         ]);
+        Kategori::create([
+            'id_catering' => 1,
+            'isi_kategori' => 'Nasi Kotak'
+        ]);
+        Kategori::create([
+            'id_catering' => 1,
+            'isi_kategori' => 'Tumpeng'
+        ]);
+
     }
 }

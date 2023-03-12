@@ -16,12 +16,12 @@ class CreateMenusTable extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->string('id_catering');
-            $table->string('nama');
-            $table->integer('harga');
-            $table->string('slug');
-            $table->text('isi_menu');
-            $table->enum('jenis', ['prasmanan', 'nasi kotak', 'snack/jajanan', 'menu lain', 'minuman']);
-            $table->text('foto')->nullable();
+            $table->string('id_categori'); 
+            $table->string('nama'); 
+            $table->integer('harga'); 
+            $table->string('slug'); 
+            $table->text('isi_menu'); 
+            $table->text('foto')->nullable(); 
             $table->text('deskripsi');
             $table->text('kisaran_porsi');
             $table->text('pengemasan');
