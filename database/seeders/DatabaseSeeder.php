@@ -7,6 +7,7 @@ use App\Models\Item;
 use App\Models\Kategori;
 use App\Models\Keranjang;
 use App\Models\Menu;
+use App\Models\Pesanan;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -93,6 +94,14 @@ class DatabaseSeeder extends Seeder
         Kategori::create([
             'id_catering' => 1,
             'isi_kategori' => 'Tumpeng'
+        ]);
+        Pesanan::create([
+            'id_catering' => 1,
+            'id_user' => 1,
+            'id_menu' => 1,
+            'tgl_pengantaran' => '2023-04-21',
+            'jumlah_menu' => 2,
+            'total' => 100000,
         ]);
 
     }

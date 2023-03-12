@@ -15,13 +15,13 @@ class CreatePesanansTable extends Migration
     {
         Schema::create('pesanans', function (Blueprint $table) {
             $table->id();
+            $table->string('id_catering');
             $table->string('id_user');
             $table->string('id_menu');
-            $table->string('id_catering');
             $table->date('tgl_pengantaran');
             $table->integer('jumlah_menu');
             $table->integer('total');
-            $table->enum('status', ['belum-konfirmasi', 'belum bayar', 'proses', 'selesai'])->default('belum-konfirmasi');
+            $table->enum('status', ['Belum Konfirmasi', 'Belum Bayar', 'Proses', 'Selesai'])->default('Belum Konfirmasi');
             $table->timestamps();
         });
     }

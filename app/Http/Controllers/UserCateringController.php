@@ -79,13 +79,32 @@ class UserCateringController extends Controller
     public function blm_konfir_view()
     {
         return view('catering.blmkonfir', [
-            'pesanans' => Pesanan::where('id_catering', session('dataCatering')->id)
+            'pesanans' => Pesanan::where('id_catering', session('dataCatering')->id)->where('status', 'Belum Konfirmasi')->get()
         ]);
+    }
+    public function blm_konfir_store(Request $request, Pesanan $pesanan)
+    {
+        $validasi = $request->validate([
+            'total' => 'required',
+            'tgl_pengantaran' => 'required',
+        ]);
+
+        $validasi['id_catering'] = $pesanan->id_catering;
+        $validasi['id_user'] = $pesanan->id_user;
+        $validasi['id_menu'] = $pesanan->id_menu;
+        $validasi['jumlah_menu'] = $pesanan->jumlah_menu;
+        $validasi['status'] = 'Belum Bayar';
+
+        Pesanan::where('id', $pesanan->id)->update($validasi);
+
+        return redirect('/dashboard/pesanan/belumbayar');
     }
 
     public function blm_bayar_view()
     {
-        return view('catering.blmbayar');
+        return view('catering.blmbayar', [
+            'pesanans' => Pesanan::where('id_catering', session('dataCatering')->id)->where('status', 'Belum Bayar')->get()
+        ]);
     }
 
     public function proses_view()
@@ -162,8 +181,9 @@ class UserCateringController extends Controller
      * @param  \App\Models\Catering  $catering
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Catering $catering)
+    public function destroy(Pesanan $pesanan)
     {
-        //
+        Pesanan::destroy($pesanan->id);
+        return back()->with('hapusPesananSuccess', 'Pesanan telah dibatalkan');
     }
 }

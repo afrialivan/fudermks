@@ -19,4 +19,8 @@ class Catering extends Model
         return $this->hasMany(Menu::class, 'id_menu');
     }
 
+    public function pesanan() {
+        return $this->hasMany(Pesanan::class);
+    }
+
 }

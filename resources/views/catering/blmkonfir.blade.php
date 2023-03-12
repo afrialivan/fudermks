@@ -8,7 +8,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title mb-30">
-                            <h2>Menu Catering</h2>
+                            <h2>Belum Konfirmasi Pesanan</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -31,7 +31,6 @@
                 <!-- end row -->
             </div>
             <!-- ========== title-wrapper end ========== -->
-            <a href="/dashboard/menu/tambah-menu" class="btn btn-primary mb-3 p-2">Tambah Menu</a>
             <!-- ========== tables-wrapper start ========== -->
             <div class="tables-wrapper">
                 <div class="row">
@@ -39,6 +38,13 @@
                         <div class="card-style mb-30">
                             <div class="table-wrapper table-responsive">
                                 <table class="table">
+                                    @if (session()->has('hapusPesananSuccess'))
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                            <strong>{{ session('hapusPesananSuccess') }}</strong>
+                                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
+                                        </div>
+                                    @endif
                                     <thead>
                                         <tr>
                                             <th class="col-2">
@@ -68,27 +74,73 @@
                                                 <td class="min-width">
                                                     <div class="lead">
                                                         <div class="lead-text">
-                                                            <p>{{ $pesanan->nama }}</p>
+                                                            <p>{{ $pesanan->user->name }}</p>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td class="min-width">
-                                                    <p><a href="#0">Rp {{ $pesanan->harga }}</a></p>
+                                                    <p><a href="#0">{{ $pesanan->menu->nama }}</a></p>
                                                 </td>
                                                 <td class="min-width">
-                                                    <p>{{ $pesanan->isi_menu }}</p>
+                                                    <p>{{ $pesanan->jumlah_menu }}</p>
                                                 </td>
                                                 <td class="min-width">
-                                                    <p>{{ $pesanan->kategori->isi_kategori }}</p>
+                                                    <p>{{ $pesanan->tgl_pengantaran }}</p>
+                                                </td>
+                                                <td class="min-width">
+                                                    <p>{{ $pesanan->total }}</p>
                                                 </td>
                                                 <td>
                                                     <div class="action">
-                                                        <button class="text-primary fs-4">
+                                                        <button class="text-primary fs-4" data-bs-toggle="modal"
+                                                            data-bs-target="#exampleModal" data-bs-whatever="@mdo">
                                                             <i class="bi bi-pencil-square"></i>
                                                         </button>
                                                     </div>
                                                 </td>
                                             </tr>
+
+                                            {{-- Modal --}}
+                                            <div class="modal fade" id="exampleModal" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Konfirmasi
+                                                                Pesanan</h1>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                        </div>
+                                                        <form action="/dashboard/pesanan/belumkonfir/{{ $pesanan->id }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            <div class="modal-body">
+                                                                <div class="mb-3">
+                                                                    <label for="recipient-name" class="col-form-label">Total
+                                                                        Harga:</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="recipient-name" name="total"
+                                                                        value="{{ $pesanan->total }}">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="recipient-name"
+                                                                        class="col-form-label">Tanggal Pengantaran:</label>
+                                                                    <input type="date" class="form-control"
+                                                                        id="recipient-name" name="tgl_pengantaran"
+                                                                        value="{{ $pesanan->tgl_pengantaran }}">
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Close</button>
+                                                                <a href="/dashboard/pesanan/hapus/{{ $pesanan->id }}" class="btn btn-danger">Batalkan</a>
+                                                                <button type="submit" class="btn btn-primary">Send
+                                                                    message</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         @endforeach
                                         <!-- end table row -->
                                     </tbody>

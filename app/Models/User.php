@@ -47,4 +47,8 @@ class User extends Authenticatable
     public function catering() {
         return $this->belongsTo(Catering::class);
     }
+
+    public function pesanan() {
+        return $this->hasMany(Pesanan::class);
+    }
 }

@@ -18,4 +18,8 @@ class Menu extends Model
         return $this->belongsTo(Kategori::class, 'id_categori');
     }
 
+    public function pesanan() {
+        return $this->hasMany(Pesanan::class);
+    }
+
 }
