@@ -9,24 +9,20 @@
 
         <h2 class="text-center mt-3">Pesanan Anda</h2>
 
-        <div class="nav-pesanan d-flex justify-content-between m-auto mt-3">
-            <div class="nav-items d-flex">
+            <div class="nav-items d-flex justify-content-center">
+                <div class="nav-item">
+                    <a href="pesanan-belum-bayar.html" class="text-decoration-none text-dark">BELUM DIKONFIRMASI</a>
+                </div>
                 <div class="nav-item">
                     <a href="pesanan-belum-bayar.html" class="text-decoration-none text-dark">BELUM BAYAR</a>
                 </div>
                 <div class="nav-item">
                     <a href="pesanan-proses.html" class="text-decoration-none">DIPROSES</a>
                 </div>
-            </div>
-            <div class="nav-items d-flex">
                 <div class="nav-item">
                     <a href="pesanan-selesai.html" class="text-decoration-none">SELESAI</a>
                 </div>
-                <div class="nav-item">
-                    <a href="#" class="text-decoration-none">DIBATALKAN</a>
-                </div>
             </div>
-        </div>
         <hr class="m-auto mt-2 mb-4">
 
 

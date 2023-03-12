@@ -10,7 +10,7 @@
 
         <div class="profil-foto">
             <div class="foto">
-                <img src="img/seruni.png" alt="">
+                <img src="{{ asset('img/profil.png') }}" alt="">
             </div>
             <h3>{{ $user[0]->name }}</h3>
         </div>

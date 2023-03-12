@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Catering;
-use App\Models\Keranjang;
 use App\Models\Menu;
 use App\Models\Pesanan;
 use Illuminate\Http\Request;
@@ -36,7 +35,6 @@ class cateringController extends Controller
             'title' => 'Detail Menu',
             'catering' => $catering,
             'menu' => Menu::where('id_catering', $catering->id)->get(),
-            // dd(Menu::where('id_catering', $catering->id)->get())
         ]);
     }
 
@@ -48,7 +46,6 @@ class cateringController extends Controller
         $validasi['id_menu'] = $menu->id;
         $validasi['id_user'] = auth()->user()->id;
         $validasi['total'] = $menu->harga * $validasi['jumlah_menu'];
-        // dd($validasi['total']);
 
         Pesanan::create($validasi);
 

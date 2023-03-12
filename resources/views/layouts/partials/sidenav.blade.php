@@ -5,7 +5,7 @@
       <a href="/profil" class="text-decoration-none">
         <div class="nav-foto">
           <div class="foto">
-            <img src="img/profil.png" alt="">
+            <img src="{{ asset('img/profil.png') }}" alt="">
           </div>
           <h3>Selamat Datang, {{ auth()->user()->name }}</h3>
         </div>
