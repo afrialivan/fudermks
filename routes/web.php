@@ -38,6 +38,10 @@ Route::post('/tambah-pesanan/{menu}', [cateringController::class, 'tambahCaterin
 Route::get('/keranjang', [cateringController::class, 'keranjang']);
 Route::get('/menu', [cateringController::class, 'menu']);
 Route::get('/pesanan', [cateringController::class, 'pesanan']);
+Route::get('/pesanan/pesanan-belum-bayar', [cateringController::class, 'pesananBayar']);
+Route::get('/pesanan/pesanan-proses', [cateringController::class, 'pesananProses']);
+Route::post('/pesanan/pesanan-proses/{pesanan}', [cateringController::class, 'selesai']);
+Route::get('/pesanan/pesanan-selesai', [cateringController::class, 'pesananSelesai']);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 

@@ -41,7 +41,9 @@ class cateringController extends Controller
     public function tambahCatering(Request $request, Menu $menu)
     {
         $validasi = $request->validate([
-            'jumlah_menu' => 'required|integer'
+            'jumlah_menu' => 'required|integer',
+            'tgl_pengantaran' => 'required',
+            'id_catering' => 'required'
         ]);
         $validasi['id_menu'] = $menu->id;
         $validasi['id_user'] = auth()->user()->id;
@@ -64,8 +66,50 @@ class cateringController extends Controller
     {
         return view('user.pesanan.pesanan', [
             'title'  => 'Pesanan',
-            'pesanan' => Pesanan::where('id_user', auth()->user()->id)->latest()->get()
+            'status'  => 'blm',
+            'pesanan' => Pesanan::where('id_user', auth()->user()->id)->where('status', 'Belum Konfirmasi')->latest()->get()
         ]);
+    }
+
+    public function pesananBayar()
+    {
+        return view('user.pesanan.pesanan', [
+            'title'  => 'Pesanan',
+            'status'  => 'bayar',
+            'pesanan' => Pesanan::where('id_user', auth()->user()->id)->where('status', 'Belum Bayar')->latest()->get()
+        ]);
+    }
+
+    public function pesananProses()
+    {
+        return view('user.pesanan.pesanan', [
+            'title'  => 'Pesanan',
+            'status'  => 'proses',
+            'pesanans' => Pesanan::where('id_user', auth()->user()->id)->where('status', 'Proses')->latest()->get()
+        ]);
+    }
+    public function pesananSelesai()
+    {
+        return view('user.pesanan.pesanan', [
+            'title'  => 'Pesanan',
+            'status'  => 'selesai',
+            'pesanan' => Pesanan::where('id_user', auth()->user()->id)->where('status', 'Selesai')->latest()->get()
+        ]);
+    }
+
+    public function selesai(Pesanan $pesanan)
+    {
+        Pesanan::where('id', $pesanan->id)->update([
+            'total' => $pesanan->total,
+            'tgl_pengantaran' => $pesanan->tgl_pengantaran,
+            'id_catering' => $pesanan->id_catering,
+            'id_user' => $pesanan->id_user,
+            'id_menu' => $pesanan->id_menu,
+            'jumlah_menu' => $pesanan->jumlah_menu,
+            'status' => 'Selesai',
+        ]);
+
+        return redirect('/pesanan/pesanan-selesai');
     }
 
     /**

@@ -17,29 +17,37 @@
             <!-- <hr> -->
         </nav>
         <div class="row">
-            <div class="col-lg-5"><img src="{{ asset($menu[0]->foto) }}" alt="" class="gambar"></div>
+            <div class="col-lg-5"><img src="{{ asset('storage/' . $menu[0]->foto) }}" alt="" class="gambar"></div>
             <div class="col-lg-7">
                 {{-- @dd($menu) --}}
                 <h1 class="mt-3">{{ $menu[0]->nama }}</h1>
-                <p class="mb-4 h4">Rp {{ $menu[0]->harga }}</p>
+                <p class="mb-4 h4">Rp @money( $menu[0]->harga )</p>
                 <hr>
                 <form action="/tambah-pesanan/{{ $menu[0]->id }}" method="POST">
                     @csrf
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-12 col-lg-6 col-md-12 col-sm-12">
                             <div class="tombol-jumlah d-flex justify-content-around">
                                 <button type="button" class="btn" id="keranjangKurang">-</button>
                                 <input type="text" name="jumlah_menu" id="jumlah" value="1">
                                 <button type="button" class="btn" id="keranjangTambah">+</button>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-12 col-lg-6 col-md-12 col-sm-12">
                             <p><span class="fw-bold">Category :</span> Tumpeng</p>
                             <p><span class="fw-bold">Share :</span>
                                 <img src="../../../img/wa.svg" alt="">
                                 <img src="../../../img/fb.svg" alt="">
                             </p>
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-4">
+                            <label for="exampleFormControlInput1" class="form-label">Tanggal Pengantaran</label>
+                            <input type="date" name="tgl_pengantaran" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        </div>
+                        {{-- @dd($menu[0]) --}}
+                        <input type="hidden" name="id_catering" value="{{ $menu[0]->id_catering }}">
                     </div>
                     <div class="row">
                         <button class="btn btnn text-light" id="tambahKeranjang" type="submit">Pesan Sekarang</button>
