@@ -17,6 +17,7 @@ class CreatePesanansTable extends Migration
             $table->id();
             $table->string('id_user');
             $table->string('id_menu');
+            $table->string('id_catering');
             $table->integer('jumlah_menu');
             $table->integer('total');
             $table->enum('status', ['belum-konfirmasi', 'belum bayar', 'proses', 'selesai'])->default('belum-konfirmasi');
