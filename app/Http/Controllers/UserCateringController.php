@@ -6,6 +6,7 @@ use App\Models\Catering;
 use App\Models\Item;
 use App\Models\Kategori;
 use App\Models\Menu;
+use App\Models\Pesanan;
 use Illuminate\Http\Request;
 
 class UserCateringController extends Controller
@@ -77,7 +78,9 @@ class UserCateringController extends Controller
 
     public function blm_konfir_view()
     {
-        return view('catering.blmkonfir');
+        return view('catering.blmkonfir', [
+            'pesanans' => Pesanan::where('id_catering', session('dataCatering')->id)
+        ]);
     }
 
     public function blm_bayar_view()

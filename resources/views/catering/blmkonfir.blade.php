@@ -63,23 +63,23 @@
                                         <!-- end table row-->
                                     </thead>
                                     <tbody>
-                                        {{-- @foreach ($menus as $menu)
+                                        @foreach ($pesanans as $pesanan)
                                             <tr>
                                                 <td class="min-width">
                                                     <div class="lead">
                                                         <div class="lead-text">
-                                                            <p>{{ $menu->nama }}</p>
+                                                            <p>{{ $pesanan->nama }}</p>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td class="min-width">
-                                                    <p><a href="#0">Rp {{ $menu->harga }}</a></p>
+                                                    <p><a href="#0">Rp {{ $pesanan->harga }}</a></p>
                                                 </td>
                                                 <td class="min-width">
-                                                    <p>{{ $menu->isi_menu }}</p>
+                                                    <p>{{ $pesanan->isi_menu }}</p>
                                                 </td>
                                                 <td class="min-width">
-                                                    <p>{{ $menu->kategori->isi_kategori }}</p>
+                                                    <p>{{ $pesanan->kategori->isi_kategori }}</p>
                                                 </td>
                                                 <td>
                                                     <div class="action">
@@ -89,7 +89,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                        @endforeach --}}
+                                        @endforeach
                                         <!-- end table row -->
                                     </tbody>
                                 </table>
