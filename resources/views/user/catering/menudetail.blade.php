@@ -29,7 +29,7 @@
                         <div class="col-6">
                             <div class="tombol-jumlah d-flex justify-content-around">
                                 <button type="button" class="btn" id="keranjangKurang">-</button>
-                                <input type="text" name="jumlah_menu" id="jumlah" value="0">
+                                <input type="text" name="jumlah_menu" id="jumlah" value="1">
                                 <button type="button" class="btn" id="keranjangTambah">+</button>
                             </div>
                         </div>
@@ -67,8 +67,8 @@
         @if (session()->has('keranjang'))
             <div class="{{ session('keranjang') }} notiff justify-content-center align-items-center">
                 <div class="notif d-flex flex-column justify-content-center align-items-center">
-                    <p class="h3">Pesanan Kamu sudah masuk di keranjang</p>
-                    <a href="/keranjang" class="btn" id="notif-submit">Oke!</a>
+                    <p class="h3">Pesanan Kamu sudah masuk di pesanan</p>
+                    <a href="/pesanan" class="btn" id="notif-submit">Oke!</a>
                 </div>
             </div>
         @endif

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Catering;
 use App\Models\Keranjang;
 use App\Models\Menu;
+use App\Models\Pesanan;
 use Illuminate\Http\Request;
 
 class cateringController extends Controller
@@ -47,9 +48,9 @@ class cateringController extends Controller
         $validasi['id_menu'] = $menu->id;
         $validasi['id_user'] = auth()->user()->id;
         $validasi['total'] = $menu->harga * $validasi['jumlah_menu'];
-        // dd($menu->harga * $validasi['jumlah_menu']);
+        // dd($validasi['total']);
 
-        Keranjang::create($validasi);
+        Pesanan::create($validasi);
 
         return back()->with('keranjang', 'd-flex');
     }
@@ -72,7 +73,8 @@ class cateringController extends Controller
     public function pesanan()
     {
         return view('user.pesanan.pesanan', [
-            'title'  => 'Pesanan'
+            'title'  => 'Pesanan',
+            'pesanan' => Pesanan::where('id_user', auth()->user()->id)->latest()->get()
         ]);
     }
 

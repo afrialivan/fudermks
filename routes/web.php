@@ -34,7 +34,7 @@ Route::get('/profil', [userController::class, 'profil']);
 Route::get('/catering', [cateringController::class, 'semuaCatering']);
 Route::get('/catering/{catering:slug}', [cateringController::class, 'show']);
 Route::get('/catering/{catering:slug}/{menu:slug}', [cateringController::class, 'menuDetail']);
-Route::post('/tambah-keranjang/{menu}', [cateringController::class, 'tambahKeranjang']);
+Route::post('/tambah-pesanan/{menu}', [cateringController::class, 'tambahCatering']);
 Route::get('/keranjang', [cateringController::class, 'keranjang']);
 Route::get('/menu', [cateringController::class, 'menu']);
 Route::get('/pesanan', [cateringController::class, 'pesanan']);
