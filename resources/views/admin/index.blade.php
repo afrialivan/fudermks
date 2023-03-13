@@ -9,7 +9,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6">
                         <div class="title mb-30">
-                            <h2>eCommerce Dashboard</h2>
+                            <h2>Fuder Dashboard</h2>
                         </div>
                     </div>
                     <!-- end col -->
@@ -21,7 +21,7 @@
                                         <a href="#0">Dashboard</a>
                                     </li>
                                     <li class="breadcrumb-item active" aria-current="page">
-                                        eCommerce
+                                        Fuder
                                     </li>
                                 </ol>
                             </nav>

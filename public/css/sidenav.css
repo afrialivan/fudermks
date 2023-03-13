@@ -19,19 +19,6 @@ a {
 }
 
 
-
-/* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
-
-
-h1,
-h2,
-h3,
-h4,
-h5 p {
-  font-family: 'Poppins', sans-serif;
-}
-
 /* grid */
 .gridd {
   display: grid;
@@ -52,7 +39,6 @@ body {
   position: relative;
   padding-right: 20px;
   overflow-x: hidden;
-  font-family: 'Poppins', sans-serif;
 }
 
 header {
@@ -138,9 +124,8 @@ main {
   } */
 
   .nav-foto {
-    margin: auto;
     display: block;
-    width: calc(15rem + ((1vw - 7.68px) * 0.6944));
+    width: calc(16rem + ((1vw - 7.68px) * 0.6944));
     margin: 50px auto;
     transition: 0.3s;
   }
@@ -156,7 +141,7 @@ main {
   .nav-foto h3 {
     transition: .2s;
     text-align: center;
-    font-size: calc(1.5rem + ((1vw - 7.68px) * 0.6944)) !important;
+    font-size: calc(1.2rem + ((1vw - 7.68px) * 0.6944)) !important;
     color: white;
     /* width: 300px; */
     margin: auto;
